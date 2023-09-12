@@ -1,0 +1,64 @@
+.qld-table {
+    
+    border: 1px solid $qld-light-grey;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+
+    .table {
+
+        margin-bottom: 0;
+        border-radius: 0.75rem;
+        
+        //required to maintain effective border-radius on the table
+        overflow: hidden; 
+
+        caption {
+            caption-side: top;
+            color: var(--qld-headings-color);
+            padding: 0.75rem;
+            line-height: 2rem;
+            font-size: 1.25rem;
+        }
+        .sub-caption {
+            color: var(--qld-dark-grey-muted);
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.25rem;
+            display: table-row;
+        }
+
+        thead th,
+        thead td {
+            border-bottom: 2px solid $qld-light-green;
+        }
+
+        tfoot th,
+        tfoot td {
+            border-top: 2px solid $qld-light-green;
+            border-bottom: 0;
+        }
+    }
+
+    //Table dark
+    @include table-variant("dark", $qld-sapphire-blue);
+
+    .table-dark {
+        
+        --table-dark-bg: #{$qld-sapphire-blue} !important;
+        --table-dark-header-bg: #04498F;
+        --table-dark-text-color: #FFF;
+        
+        caption,
+        .sub-caption  {
+            background-color: var(--table-dark-bg);
+            color: var(--table-dark-text-color);
+        }
+
+        thead th {
+            background-color: var(--table-dark-header-bg);
+        }
+    }
+
+
+}
+
