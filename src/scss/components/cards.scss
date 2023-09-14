@@ -1,0 +1,80 @@
+// Cards - QLD Desing System extending Bootsrap 5
+.card {
+
+    --#{$prefix}card-border-color: #{$qld-light-grey};
+    --#{$prefix}card-link-color: #{$link-color};
+    --#{$prefix}card-footer-border: #{$qld-light-grey};
+    --#{$prefix}card-border-radius: 0.75rem;
+    
+    //Variants
+    &.card-alternative {
+        --#{$prefix}card-title-color: #{$headings-color};
+        --#{$prefix}card-bg: #{$qld-light-grey};
+        --#{$prefix}card-color: #{$body-color};
+        --#{$prefix}card-border-color: #7A7A7A;
+        --#{$prefix}card-footer-border: #7A7A7A;
+    }
+    &.card-primary { 
+        --#{$prefix}card-title-color: #FFF;
+        --#{$prefix}card-bg: #{$primary};
+        --#{$prefix}card-color: #FFF;
+        --#{$prefix}card-link-color: #FFF;
+        --#{$prefix}card-border-color: #2573C1;
+        --#{$prefix}card-footer-border: #FFFFFF30; //white at 30%
+    }
+    &.card-primary--dark {
+        --#{$prefix}card-title-color: #FFF;
+        --#{$prefix}card-bg: #{$primary-dark};
+        --#{$prefix}card-color: #FFF;
+        --#{$prefix}card-link-color: #FFF;
+        --#{$prefix}card-footer-border: #FFFFFF30; //white at 30%
+    }
+
+    .card-title {
+        line-height: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+        
+        a {
+            color:  var(--#{$prefix}card-link-color);
+            text-decoration: none;
+        
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+        }
+    }
+    .card-img-top {
+        border-bottom-right-radius: 1.875rem;
+    }
+
+    .card-footer {
+        color: var(--#{$prefix}card-color);
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        background: none;
+        border-top: 0;
+        position: relative;
+        padding: var(--#{$prefix}card-spacer-y) var(--#{$prefix}card-spacer-x);
+        padding-top: 2.5rem;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: var(--#{$prefix}card-spacer-x);
+            right: var(--#{$prefix}card-spacer-x);
+            top: calc(1.25rem - 1px);
+            height: 1px;
+            background: var(--#{$prefix}card-footer-border);
+        }
+    }
+    
+    small {
+        font-size: 0.875rem;
+    }
+    
+
+
+}
