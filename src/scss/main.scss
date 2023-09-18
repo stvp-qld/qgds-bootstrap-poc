@@ -4,9 +4,13 @@
 
 // Guidelines for this setup: https://getbootstrap.com/docs/5.3/customize/sass/
  
-// External font
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap');
+// External fonts
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&Noto+Sans:wght@400;600&display=swap');
 $font-family-sans-serif: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+//Icons
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
 
 //Prefix to namespace design-system classes
 $prefix: "qld-";
@@ -109,6 +113,16 @@ $enable-dark-mode: true;
 @import "./components/cards";
 @import "./components/carousel";
 @import "./components/forms";
+@import "./components/header-search";
+@import "./components/icons";
+@import "./components/navbar";
 @import "./components/tables";
 @import "./components/pagination";
+
+// 9. QLD Design System layout support
+@import "./layout/footer";
+@import "./layout/header";
+
+
+
 //... as needed.  Please maintain naming consistency
