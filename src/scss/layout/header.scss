@@ -1,0 +1,45 @@
+
+header {
+
+
+
+    .pagetop {
+        
+        --component-icon-color: var(--qld-golden-yellow);    
+
+        padding: 0.5rem 0;
+        background: var(--qld-sapphire-blue);
+        margin: 0;
+
+        .pagetop-tag {
+            display: flex;
+            color: #FFF; 
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .qld-icon {
+            margin-right: 0.25rem;
+        }
+
+    }
+
+    .header-main {
+        display: flex;
+        padding: 2rem 0;
+    }
+
+    .header-site-logo {
+        margin-right: 1.5rem;
+    }
+
+    .header-site-name {
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--qld-light-green);
+        font-size: 1.25rem;
+        font-weight: 600;
+        font-family: 'Fira Sans', 'Noto Sans', sans-serif;
+        line-height: 56px;
+    }
+
+}

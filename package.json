@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watch 'npm run build' ./src"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,10 @@
   "devDependencies": {
     "autoprefixer": "^10.4.15",
     "esbuild": "^0.19.2",
-    "postcss": "^8.4.29"
+    "esbuild-plugin-copy": "^2.1.1",
+    "postcss": "^8.4.29",
+    "watch": "^1.0.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

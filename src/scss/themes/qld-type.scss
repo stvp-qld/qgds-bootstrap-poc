@@ -15,3 +15,25 @@ $headings-line-height:        2;
 $headings-color:              #03213F;
 
 $link-color: $primary;
+
+
+//Links
+:root {
+    --qld-link-underline-offset: 3px;
+    --qld-link-underline-thickness: 0.5px;
+    --qld-link-underline-thickness-hover: 2px;
+}
+
+//Content and links
+.qld-content,
+.qld-footer {
+    a {
+        text-decoration: underline;
+        text-underline-offset: var(--qld-link-underline-offset);
+        text-decoration-thickness: var(--qld-link-underline-thickness);
+        
+        &:hover {
+            text-decoration-thickness: var(--qld-link-underline-thickness-hover);
+        }
+    }
+}
