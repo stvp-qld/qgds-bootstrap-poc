@@ -27,7 +27,8 @@ const buildConfig = {
 			async transform(source) {
 				const { css } = await postcss([autoprefixer]).process(source, { 
 					from: 'src/main.scss', 
-					to: 'dist/assets/css/qld.bootstrap.css', map: true
+					to: 'dist/assets/css/qld.bootstrap.css', 
+					map: true
 				});
 				return css;
 			},
@@ -39,11 +40,15 @@ const buildConfig = {
 			assets: [
 				{
 			  		from: ['./src/templates/*.html'],
-			  		to: ['.'],
+			  		to: ['./dist/'],
 				},
 				{
 					from: ['./src/img/*'],
 					to: ['./dist/assets/img'],
+				},
+				{
+					from: ['./dist/**/*'],
+					to: ['./docs/'],
 				}
 			],
 			watch: true,
