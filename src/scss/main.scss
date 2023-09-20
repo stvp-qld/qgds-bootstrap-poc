@@ -15,6 +15,7 @@ $font-family-sans-serif: "Noto Sans", system-ui, -apple-system, "Segoe UI", Robo
 //Prefix to namespace design-system classes
 $prefix: "qld-";
 $enable-cssgrid: true;
+$color-mode-type: media-query;
 $enable-dark-mode: true;
 
 // 1. Include bootstraps functions and variables first (so they can be referenced by proceeding files)
@@ -106,23 +107,30 @@ $enable-dark-mode: true;
 // 8. QLD Design System components (bootsrap overrides and custom)
 @import "./components/accordion";
 @import "./components/alerts";
+@import "./components/banner";
 @import "./components/blockquote";
 @import "./components/breadcrumbs";
 @import "./components/buttons";
 @import "./components/callout";
+// @import "./components/cards";
 @import "./components/cards";
 @import "./components/carousel";
 @import "./components/forms";
 @import "./components/header-search";
 @import "./components/icons";
+@import "./components/inpage-nav";
+@import "./components/nav"; //includes side nav
 @import "./components/navbar";
 @import "./components/tables";
 @import "./components/pagination";
+@import "./components/typography";
+
+@import "./themes/qld-theme";
 
 // 9. QLD Design System layout support
 @import "./layout/footer";
 @import "./layout/header";
-
+@import "./layout/content";
 
 
 //... as needed.  Please maintain naming consistency

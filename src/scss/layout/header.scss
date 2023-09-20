@@ -1,25 +1,37 @@
 
 header {
 
+    --pagetop-icon-color: var(--qld-golden-yellow);
+    --pagetop-bg-color: var(--qld-sapphire-blue);
+    --pagetop-text-color: var(--qld-white);
+    --site-logo-color: var(--qld-system-darkest);
 
+
+    //Dark theme
+    @media (prefers-color-scheme: dark) {
+        --pagetop-icon-color: var(--qld-golden-yellow);
+        --pagetop-bg-color:   var(--qld-text-grey);
+        --pagetop-text-color: var(--qld-white);
+        --site-logo-color: var(--qld-white);
+    }
+    
 
     .pagetop {
         
-        --component-icon-color: var(--qld-golden-yellow);    
-
         padding: 0.5rem 0;
-        background: var(--qld-sapphire-blue);
         margin: 0;
+        background: var(--pagetop-bg-color);
 
         .pagetop-tag {
             display: flex;
-            color: #FFF; 
+            color: var(--pagetop-text-color); 
             align-items: center;
             font-size: 0.875rem;
         }
 
         .qld-icon {
             margin-right: 0.25rem;
+            background-color: var(--pagetop-icon-color);
         }
 
     }
@@ -31,7 +43,12 @@ header {
 
     .header-site-logo {
         margin-right: 1.5rem;
+
+        svg path {
+            fill: var(--site-logo-color);
+        }
     }
+
 
     .header-site-name {
         padding-left: 1.5rem;

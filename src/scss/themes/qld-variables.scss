@@ -13,12 +13,15 @@ $qld-dark-green        : #008635;
 $qld-golden-yellow     : #FFE500;
 $qld-system-darkest    : #1D1D1D;
 $qld-text-grey         : #414141;
+$qld-text-headings     : #03213F;
 $qld-dark-grey         : #595959;
 $qld-dark-grey-muted   : #636363;
 $qld-medium-grey       : #78797E;
+$qld-soft-grey         : #7A7A7A;
 $qld-grey              : #E0E0E0;
 $qld-light-grey        : #EBEBEB;
-$qld-extra-light-grey  : #F5F5F5;
+$qld-light-grey-alt    : #E8E8E8;
+$qld-extra-light-grey  : #F5F5F5; 
 $qld-white             : #FFFFFF;
 $qld-white-underline   : rgba(255, 255, 255, 0.72);
 $qld-dark-underline    : rgba(3, 33, 63, 0.72);
@@ -57,9 +60,11 @@ $project-colors: (
     "text-grey"         : $qld-text-grey,
     "dark-grey"         : $qld-dark-grey,
     "dark-grey-muted"   : $qld-dark-grey-muted,
+    "soft-grey"         : $qld-soft-grey,
     "medium-grey"       : $qld-medium-grey,
     "grey"              : $qld-grey,
     "light-grey"        : $qld-light-grey,
+    "light-grey-alt"    : $qld-light-grey-alt,
     "extra-light-grey"  : $qld-extra-light-grey,
     "white"             : $qld-white,
     "white-underline"   : $qld-white-underline,
@@ -112,3 +117,23 @@ $qld-border-width-default               : 2px;
 $qld-border-width-medium                : 3px;
 $qld-border-width-thick                 : 4px;
 $qld-border-width-extra-thick           : 8px;
+
+
+
+// Extended spacers to procude 8px and 16px increments
+// use px-16, py-sm-16, ml-40, mr-40, etc
+$qld-custom-spacers: (
+  16: $spacer,
+  20: ($spacer * 1.25),
+  24: ($spacer * 1.5),
+  32: ($spacer * 2),
+  40: ($spacer * 2.5),
+  48: ($spacer * 3.0),
+  56: ($spacer * 3.5),
+  64: ($spacer * 4),
+  72: ($spacer * 4.5),
+  80: ($spacer * 5)
+);
+
+$spacers: map-merge($spacers, $qld-custom-spacers);
+

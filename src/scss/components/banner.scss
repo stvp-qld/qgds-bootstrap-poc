@@ -1,0 +1,36 @@
+.qld-banner {
+    --#{$prefix}banner-bg: var(--#{$prefix}light-grey);
+    
+    // Insert dark mode styles here
+    @include color-scheme(dark) {
+        --#{$prefix}banner-bg: var(--#{$prefix}sapphire-blue);
+    }
+}
+
+
+.qld-banner {
+    
+    background: var(--#{$prefix}banner-bg);
+    
+    padding: 1rem 0 2rem 0;
+    @include media-breakpoint-up(md) { 
+        padding: 2.5rem 0 3rem 0;
+    }
+
+    .banner-title {
+
+        // H1's (2.5rem or 40px). Line height (3.25rem or 52px).
+        // LH = 52/40
+        line-height: 1.3;          
+        color: var(--qld-headings-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .banner-lead {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        max-width: 50rem;
+        color: var(--qld-text-grey);
+    }
+}
+

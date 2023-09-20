@@ -1,6 +1,7 @@
 //Typography
 $font-family-sans-serif: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$body-color: $qld-system-darkest;
+
+$body-color: $qld-text-grey;
 
 $font-size-base:              1rem;
 $h1-font-size:                $font-size-base * 2.5;
@@ -12,7 +13,7 @@ $h6-font-size:                $font-size-base * 0.875;
 
 $headings-font-weight:        600;
 $headings-line-height:        2;
-$headings-color:              #03213F;
+$headings-color:              $qld-text-headings;
 
 $link-color: $primary;
 
@@ -22,18 +23,31 @@ $link-color: $primary;
     --qld-link-underline-offset: 3px;
     --qld-link-underline-thickness: 0.5px;
     --qld-link-underline-thickness-hover: 2px;
+    --qld-headings-color: $headings-color;
+    --qld-body-color: $body-color;
 }
 
 //Content and links
-.qld-content,
-.qld-footer {
-    a {
-        text-decoration: underline;
-        text-underline-offset: var(--qld-link-underline-offset);
-        text-decoration-thickness: var(--qld-link-underline-thickness);
-        
-        &:hover {
-            text-decoration-thickness: var(--qld-link-underline-thickness-hover);
-        }
+
+a,
+a.nav-link {
+    text-decoration: underline;
+    text-underline-offset: var(--qld-link-underline-offset);
+    text-decoration-thickness: var(--qld-link-underline-thickness);
+    
+    &:hover {
+        text-decoration-thickness: var(--qld-link-underline-thickness-hover);
+    }
+}
+
+
+a.nostyle {
+
+    text-decoration: unset;
+    text-underline-offset: unset;
+    text-decoration-thickness: unset;
+    
+    &:hover {
+        text-decoration-thickness: unset;
     }
 }

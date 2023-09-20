@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watch 'npm run build' ./src"
+    "nodebuild": "node build.mjs",
+    "build": "bun build ./src/main.js --outfile=dist/bundle.js --watch",
+    "serve": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watch 'npm run nodebuild' ./src",
+    "dev": "bun --hot index.js --outfile=dist/bundle.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,10 @@
     "postcss": "^8.4.29",
     "watch": "^1.0.2",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }

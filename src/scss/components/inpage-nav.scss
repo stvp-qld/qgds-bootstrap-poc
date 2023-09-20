@@ -1,0 +1,35 @@
+:root {
+    --inpage-nav-border-color: var(--qld-sapphire-blue);
+    --inpage-nav-padding-left: 1rem;
+    --inpage-nav-title-padding-left: $nav-link-padding-x;
+    --inpage-nav-link-padding-y: 0.25rem;
+  }
+  
+  .qld-inpage-nav {
+    border-left: 4px solid var(--inpage-nav-border-color);
+    padding-left: var(--inpage-nav-padding-left);
+  
+    ul.nav {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+    }
+  
+    .nav-title {
+      font-size: 1rem;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      padding-left: var(--inpage-nav-title-padding-left);
+    }
+  
+    .nav-item {
+      .nav-link {
+        padding-top: var(--inpage-nav-link-padding-y);
+        padding-bottom: var(--inpage-nav-link-padding-y);
+      }
+  
+      &:first-child .nav-link {
+        padding-top: 0;
+      }
+    }
+  }
