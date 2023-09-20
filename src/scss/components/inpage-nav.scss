@@ -1,0 +1,32 @@
+.qld-inpage-nav {
+
+    border-left: 4px solid var(--qld-sapphire-blue);
+    padding-left: 1rem;
+
+    ul.nav {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .nav-title {
+        font-size: 1rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+        //Match padding of .nav-link
+        padding-left: $nav-link-padding-x;
+    }
+
+    .nav-item {
+        
+        .nav-link {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+    
+        &:first-child .nav-link {
+            padding-top: 0;
+        }
+    }
+
+}

@@ -4,14 +4,16 @@ $breadcrumb-font-size:              1rem;
 $breadcrumb-padding-y:              0;
 $breadcrumb-padding-x:              0;
 $breadcrumb-item-padding-x:         .75rem;
-$breadcrumb-margin-bottom:          1rem;
 $breadcrumb-bg:                     null;
 $breadcrumb-divider:                quote(">");
 $breadcrumb-divider-flipped:        $breadcrumb-divider;
 $breadcrumb-border-radius:          null;
+$breadcrumb-margin-bottom:          1.5rem;
 
 .breadcrumb {
     --#{$prefix}breadcrumb-divider: ">";
     --#{$prefix}breadcrumb-divider-color: #{$qld-dark-green};
     --#{$prefix}breadcrumb-item-active-color: #636363;
+    --#{$prefix}breadcrumb-bg: transparent;
+    --#{$prefix}breadcrumb-margin-bottom: #{$breadcrumb-margin-bottom};
 }
