@@ -6,9 +6,9 @@
     
     {{{metadata}}}
 
-    <title>{{pageTitle}}</title>
-
+    <title>{{PageHeading}} | QLD.GOV.AU</title>
     <link rel="stylesheet" href="assets/css/qld.bootstrap.css">
+
 </head>
 
 <body>
@@ -44,14 +44,16 @@
                 <div class="row">
 
                     <!-- Left Aside -->
-                    <div class="col-12 col-lg-3 order-last order-lg-first">
+                    <!-- //order-lg-last -->
+                    <div class="col-12 col-lg-3 order-lg-first">
                         {{{ sidenav }}}
                     </div>
-                
-                    <div class="col-12 col-lg-7 mx-16 ms-lg-40">
+
+                    <!-- //order-lg-first -->
+                    <div class="col-12 col-lg-9 order-lg-last ps-lg-72">
                         
                         {{{inpagenav}}}
-                        
+
                         {{{main}}}
                         
                     </div>

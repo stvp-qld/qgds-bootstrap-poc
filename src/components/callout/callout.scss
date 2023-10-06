@@ -1,7 +1,7 @@
 .callout {
     --#{$prefix}callout-padding: 1.25rem;
     --#{$prefix}callout-bg-color: #{$qld-extra-light-grey};
-    --#{$prefix}callout-border-color: #{$qld-syntax-values};
+    --#{$prefix}callout-border-color: #{$qld-brand-secondary};
     --#{$prefix}callout-border-width: 0.25rem;
 
     --#{$prefix}callout-title-color: #03213f;
@@ -11,6 +11,7 @@
     border-left: solid var(--#{$prefix}callout-border-width) var(--#{$prefix}callout-border-color);
     padding: var(--#{$prefix}callout-padding);
 
+    
     &-title {
         font-weight: 600;
         margin-bottom: 0;

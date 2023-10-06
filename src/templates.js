@@ -2,11 +2,11 @@ import fs from 'fs';
 import mustache from 'mustache';
 
 // Load the Mustache templates
-const headerTemplate = fs.readFileSync('./src/partials/header.mustache', 'utf8');
-//const mainTemplate = fs.readFileSync('./src/partials/main.mustache', 'utf8');
-//const footerTemplate = fs.readFileSync('./src/partials/footer.mustache', 'utf8');
+const headerTemplate = fs.readFileSync('./src/partials/header.html', 'utf8');
+//const mainTemplate = fs.readFileSync('./src/partials/main.html', 'utf8');
+//const footerTemplate = fs.readFileSync('./src/partials/footer.html', 'utf8');
 
-const indexTemplate = fs.readFileSync('./src/index.mustache', 'utf8');
+const indexTemplate = fs.readFileSync('./src/index.html', 'utf8');
 
 // Compile the templates
 const headerRendered = mustache.render(headerTemplate, { pageTitle: 'My Website' });

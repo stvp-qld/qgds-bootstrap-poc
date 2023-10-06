@@ -7,9 +7,10 @@
     "start": "npm run build && npm run serve",
     "build": "npm run build:theme && npm run build:templates",
     "build:theme": "node build.js",
-    "build:templates": "node build.js",
+    "build:templates": "node build-template.js",
     "serve": "live-server dist",
-    "watch": "onchange 'src/**/*' -- npm run build:theme"
+    "watch:theme": "onchange 'src/**/*' -- npm run build:theme",
+    "watch:templates": "onchange 'src/**/*' -- npm run build:templates"
   },
   "keywords": [],
   "author": "",

@@ -289,13 +289,13 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="banner-title">Education and training</h1>
+                        <h1 class="banner-title">Form or digital service example</h1>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12">
-                        <p class="banner-lead">With dummy text you can view your website as it&#39;s supposed to look, without being distracted by familiar, readable text.</p>
+                        <p class="banner-lead">Track the status of your permit application or renewal.</p>
                     </div>
                 </div>
             
@@ -309,67 +309,95 @@
 
                     <div class="col-12">
                         
-                        <h3>Popular</h3>
-<div class="row row-cols-1 row-cols-md-3 g-2">
+                        <div class="container">
 
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-1.jpg" class="card-img-top" alt="A photo of cliffs by the ocean with trees in the foreground" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">An article title</a>
-                    
-                </h3>
+    <!-- From input fields -->
+    <h3 class="mt-2 mb-3" id="formControls">Your details</h3>
 
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
 
-            <div class="card-footer">Updated 2 days ago</div>
-
+    <div class="row mb-4">
+        <div class="col col-md-6">
+            <label for="lastname" class="form-label">Last name</label>
+            <div class="form-label-hint">This should match your identification document</div>
+            <input type="text" class="form-control" id="lastname" placeholder="Example input placeholder">
         </div>
     </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-2.jpg" class="card-img-top" alt="A photo of wheat in a field lit by soft sunlight" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A longer article title</a>
-                    
-                </h3>
 
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-
-            <div class="card-footer">Updated 4 days ago</div>
-
+    <div class="row mb-4">
+        <div class="col col-md-6">
+            <label for="email" class="form-label">Email address</label>
+            <div class="form-label-hint">Optional</div>
+            <input type="text" class="form-control" id="email" placeholder="Example input placeholder">
         </div>
     </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-3.jpg" class="card-img-top" alt="A photo of the base of Uluru at sunset" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A topic headline</a>
-                    
-                </h3>
 
-                <p class="card-text">
-                    This is a supporting text below.
-                </p>
-            </div>
-
-            <div class="card-footer">Updated last week</div>
-
+    <div class="row mb-4">
+        <div class="col col-md-6">
+            <label for="moreinfo" class="form-label">Textarea</label>
+            <textarea class="form-control" id="moreinfo" placeholder="Example textarea placeholder"
+                rows="10"></textarea>
         </div>
     </div>
+
+    <!-- Select -->
+    <h3 class="mt-2 mb-3" id="selects">Region</h3>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <select class="form-select form-select-lg" name="city" id="city" aria-label="size 3 select example">
+                    <option selected>Select one</option>
+                    <option value="">Brisbane</option>
+                    <option value="">Townsville</option>
+                    <option value="">Cairns</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Radios -->
+    <h3 class="mt-2 mb-3" id="radios">Radios</h3>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Default radio
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Default checked radio
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <h3 class="mt-2 mb-3" id="radios">Checkboxes</h3>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Checked checkbox
+                </label>
+            </div>
+        </div>
+    </div>
+
 
 </div>
-
-
                         
                     </div>
                                     

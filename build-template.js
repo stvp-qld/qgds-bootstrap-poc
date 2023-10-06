@@ -5,23 +5,23 @@ import mustache from "mustache";
 const ds = {
   
   layouts: {
-    contentpage: fs.readFileSync("./src/global/layout/template/contentpage.mustache", "utf8"),
-    landingpage: fs.readFileSync("./src/global/layout/template/landingpage.mustache", "utf8")
+    contentpage: fs.readFileSync("./src/global/layout/template/contentpage.html", "utf8"),
+    landingpage: fs.readFileSync("./src/global/layout/template/landingpage.html", "utf8")
   },
 
   partials: {
-    header: fs.readFileSync("./src/global/layout/header/header.mustache", "utf8"),
-    footer: fs.readFileSync("./src/global/layout/footer/footer.mustache", "utf8"),
-    breadcrumbs: fs.readFileSync("./src/components/breadcrumbs/breadcrumbs.mustache", "utf8"),
-    sidenav: fs.readFileSync("./src/components/nav/sidenav.mustache", "utf8"),
-    inpagenav: fs.readFileSync("./src/components/inpage-nav/inpagenav.mustache", "utf8"),
+    header: fs.readFileSync("./src/global/layout/header/header.html", "utf8"),
+    footer: fs.readFileSync("./src/global/layout/footer/footer.html", "utf8"),
+    breadcrumbs: fs.readFileSync("./src/components/breadcrumbs/breadcrumbs.html", "utf8"),
+    sidenav: fs.readFileSync("./src/components/nav/sidenav.html", "utf8"),
+    inpagenav: fs.readFileSync("./src/components/inpage-nav/inpagenav.html", "utf8"),
   },
 
   makeComponent: (path, data) => mustache.render(fs.readFileSync(`./src/components/${path}`, "utf8"), data),
 
   makeTemplate: function(options) {
   
-    let content = fs.readFileSync(`./src/global/layout/content/${options.content}.mustache`, "UTF-8");
+    let content = fs.readFileSync(`./src/global/layout/content/${options.content}.html`, "UTF-8");
 
     let compiledHTML = mustache.render(
       this.layouts[options.layout], {
@@ -51,7 +51,21 @@ ds.makeTemplate({
   PageHeading : "Register your vehicle or motorcycle",
   PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.mustache", { 
+    alert: ds.makeComponent("alerts/alerts.html", {
+      type: "danger",
+      hlevel: "H3",
+      title: "Road closure",
+      message: "The Bruce Highway is closed at <strong>Caloundara</strong> due to bushfire activity. <a href='#'>Find our more</a>."
+    }),
+    button: ds.makeComponent("buttons/button.html", {
+      class: "btn-outline-secondary",
+      isbutton: false,
+      islink: true,
+      href: "https://google.com",
+      label: "Call to action",
+      target: "_blank"
+    }),
+    cardblock: ds.makeComponent("cards/cards-block.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -77,12 +91,12 @@ ds.makeTemplate({
             "footer": false
         }]
     }),
-    table: ds.makeComponent("tables/table.mustache", {}),
-    callout: ds.makeComponent("callout/callout.mustache", {
+    table: ds.makeComponent("tables/table.html", {}),
+    callout: ds.makeComponent("callout/callout.html", {
       title: "This is a callout title",
       description: "This is a callout description",
     }),
-    blockquote: ds.makeComponent("blockquote/blockquote.mustache", {
+    blockquote: ds.makeComponent("blockquote/blockquote.html", {
       title: "Blockquote title",
       description: "Fees will increase from 1 July 2024. The new fees will be available on this page from 1 July 2024.",
     })
@@ -98,7 +112,7 @@ ds.makeTemplate({
   PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
   theme       : "dark",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.mustache", { 
+    cardblock: ds.makeComponent("cards/cards-block.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -124,7 +138,7 @@ ds.makeTemplate({
             "footer": false
         }]
     }),
-    table: ds.makeComponent("tables/table.mustache", {})
+    table: ds.makeComponent("tables/table.html", {})
   }
 });
 
@@ -134,7 +148,7 @@ ds.makeTemplate({
   content     : "landing-with-cards",
   outfile     : "landing.html",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.mustache", { 
+    cardblock: ds.makeComponent("cards/cards-block.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -172,7 +186,7 @@ ds.makeTemplate({
   content     : "landing-with-cards",
   outfile     : "landing-dark.html",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.mustache", { 
+    cardblock: ds.makeComponent("cards/cards-block.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -205,72 +219,17 @@ ds.makeTemplate({
 })
 
 
-const examplepages = [
-    // {
-    //   layout      : "contentpage",
-	  //   content     : "main",
-	  //   outfile     : "index.html",
-	  //   PageHeading : "Register your vehicle or motorcycle",
-	  //   PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
-    //   viewdata: {
-    //     cards:[
-    //       {
-    //           "title" : "An article title",
-    //           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    //           "image": "https://picsum.photos/id/98/450/254",
-    //           "alt": "A photo of wheat in a field lit by soft sunlight" 
-    //       },
-    //       {
-    //           "title" : "A longer article title that wraps over two lines",
-    //           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    //           "image": "https://picsum.photos/id/112/450/254",
-    //           "alt": "A photo of wheat in a field lit by soft sunlight"
-    //       },
-    //       {
-    //           "title" : "A topic headline",
-    //           "description": "This is a supporting text below.",
-    //           "image": "https://picsum.photos/id/139/450/254",
-    //           "alt": "A photo of wheat in a field lit by soft sunlight" 
-    //       }
-    //     ]
-    //   },
-    // },
-    {
-      layout      : "contentpage",
-      content     : "main",
-	    outfile     : "index-dark.html",
-	    PageHeading : "Register your vehicle or motorcycle",
-	    PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
-      theme       : "dark"
-    },
-    {
-      layout      : "landingpage",
-      content     : "landing-with-cards",
-      outfile     : "landing.html",
-      cards: [
-          {
-              "title" : "An article title",
-              "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-              "image": "https://picsum.photos/id/98/450/254",
-              "alt": "A photo of wheat in a field lit by soft sunlight" 
-          },
-          {
-              "title" : "A longer article title that wraps over two lines",
-              "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-              "image": "https://picsum.photos/id/112/450/254",
-              "alt": "A photo of wheat in a field lit by soft sunlight"
-          },
-          {
-              "title" : "A topic headline",
-              "description": "This is a supporting text below.",
-              "image": "https://picsum.photos/id/139/450/254",
-              "alt": "A photo of wheat in a field lit by soft sunlight" 
-          }
-      ],
-	    PageHeading : "Education and training",
-	    PageLead    : "With dummy text you can view your website as it's supposed to look, without being distracted by familiar, readable text."
-    }
-];
+//Build a landing page with cards with dark theme
+ds.makeTemplate({
+  layout      : "landingpage",
+  content     : "form-example",
+  outfile     : "form.html",
+  PageHeading : "Form or digital service example",
+  PageLead    : "Track the status of your permit application or renewal.",
+});
+
+
+
 
 
 // examplepages.map( ( obj ) => {

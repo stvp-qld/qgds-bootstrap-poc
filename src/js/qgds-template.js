@@ -4,15 +4,15 @@ import mustache from "mustache";
 // Master templates
 const template = {
   layouts: {
-    contentpage: fs.readFileSync("./src/contentpage.mustache", "utf8"),
-    landingpage: fs.readFileSync("./src/landingpage.mustache", "utf8")
+    contentpage: fs.readFileSync("./src/contentpage.html", "utf8"),
+    landingpage: fs.readFileSync("./src/landingpage.html", "utf8")
   },
   partials: {
-    header: fs.readFileSync("./src/partials/header.mustache", "utf8"),
-    breadcrumbs: fs.readFileSync("./src/partials/breadcrumbs.mustache", "utf8"),
-    sidenav: fs.readFileSync("./src/partials/sidenav.mustache", "utf8"),
-    inpagenav: fs.readFileSync("./src/partials/inpagenav.mustache", "utf8"),
-    footer: fs.readFileSync("./src/partials/footer.mustache", "utf8")
+    header: fs.readFileSync("./src/partials/header.html", "utf8"),
+    breadcrumbs: fs.readFileSync("./src/partials/breadcrumbs.html", "utf8"),
+    sidenav: fs.readFileSync("./src/partials/sidenav.html", "utf8"),
+    inpagenav: fs.readFileSync("./src/partials/inpagenav.html", "utf8"),
+    footer: fs.readFileSync("./src/partials/footer.html", "utf8")
   },
   build: function(options) {
     
@@ -38,12 +38,12 @@ const template = {
 export default template;
 
 // Default content
-//const main = fs.readFileSync("./src/partials/main.mustache", "utf8");
+//const main = fs.readFileSync("./src/partials/main.html", "utf8");
 
 // Function to build and export a HTML template file
 // function buildTemplatePage(config) {
     
-//     const main = fs.readFileSync(`./src/partials/${config.partial}.mustache`, "utf8");
+//     const main = fs.readFileSync(`./src/partials/${config.partial}.html`, "utf8");
 
 // 	const compiledHTML = mustache.render(
 //         layouts[config.layout], {
