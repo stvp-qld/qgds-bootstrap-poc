@@ -1,3 +1,8 @@
+/// DEV NOTE 
+/// This build file is used for the demo/POC template rendering only
+/// Full templating system to be planned and implemented in the future
+
+
 import fs from "fs";
 import mustache from "mustache";
 
@@ -13,7 +18,7 @@ const ds = {
     header: fs.readFileSync("./src/global/layout/header/header.html", "utf8"),
     footer: fs.readFileSync("./src/global/layout/footer/footer.html", "utf8"),
     breadcrumbs: fs.readFileSync("./src/components/breadcrumbs/breadcrumbs.html", "utf8"),
-    sidenav: fs.readFileSync("./src/components/nav/sidenav.html", "utf8"),
+    sidenav: fs.readFileSync("./src/components/nav/sidenav-example.html", "utf8"),
     inpagenav: fs.readFileSync("./src/components/inpage-nav/inpagenav.html", "utf8"),
   },
 
@@ -226,6 +231,46 @@ ds.makeTemplate({
   outfile     : "form.html",
   PageHeading : "Form or digital service example",
   PageLead    : "Track the status of your permit application or renewal.",
+});
+
+
+//Build a landing page with cards with dark theme
+ds.makeTemplate({
+  layout      : "contentpage",
+  content     : "components-all",
+  outfile     : "components.html",
+  PageHeading : "POC list of components",
+  PageLead    : "This page shows examples of all components.",
+  sidenav     : fs.readFileSync("./src/global/layout/content/sidenav-components.html", "utf8"),
+  inpagenav  : "",
+  components: {
+    cardblock: ds.makeComponent("cards/cards-block.html", { 
+      cards: [{
+        "title" : "An article title",
+        "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "image": "assets/img/ds-example-image-1.jpg",
+        "alt": "A photo of cliffs by the ocean with trees in the foreground",
+        "link": "https://web.dev",
+        "footer": "Updated 2 days ago"
+      },
+      {
+          "title" : "A longer article title",
+          "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+          "image": "assets/img/ds-example-image-2.jpg",
+          "alt": "A photo of wheat in a field lit by soft sunlight",
+          "link": "https://web.dev",
+          "footer": "Updated 4 days ago"
+      },
+      {
+          "title" : "A topic headline",
+          "description": "This is a supporting text below.",
+          "image": "assets/img/ds-example-image-3.jpg",
+          "alt": "A photo of the base of Uluru at sunset",
+          "link": "https://web.dev",
+          "footer": "Updated last week"
+      }]
+    })
+  }
 });
 
 

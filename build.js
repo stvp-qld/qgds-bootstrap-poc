@@ -8,7 +8,6 @@ import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import { copy } from 'esbuild-plugin-copy';
 
-
 // Your esbuild configuration
 const buildConfig = {
 	outdir: './dist/',

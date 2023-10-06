@@ -15,7 +15,7 @@ $headings-font-weight:        600;
 $headings-line-height:        2;
 $headings-color:              $qld-text-headings;
 
-$link-color: $primary;
+$link-color:                    $qld-brand-primary;
 
 
 //Links
@@ -25,6 +25,7 @@ $link-color: $primary;
     --qld-link-underline-thickness-hover: 2px;
     --qld-headings-color: $headings-color;
     --qld-body-color: $body-color;
+    --qld-link-font-weight: 600;
 }
 
 :root[data-bs-theme=dark] {
@@ -46,6 +47,10 @@ $link-color: $primary;
 
 
 //Content and links
+a {
+    font-weight: var(--qld-link-font-weight);
+}
+
 a,
 a.nav-link {
     text-decoration: underline;
