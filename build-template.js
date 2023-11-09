@@ -1,8 +1,6 @@
 /// DEV NOTE 
 /// This build file is used for the demo/POC template rendering only
 /// Full templating system to be planned and implemented in the future
-
-
 import fs from "fs";
 import mustache from "mustache";
 
@@ -10,14 +8,14 @@ import mustache from "mustache";
 const ds = {
   
   layouts: {
-    contentpage: fs.readFileSync("./src/global/layout/template/contentpage.html", "utf8"),
-    landingpage: fs.readFileSync("./src/global/layout/template/landingpage.html", "utf8")
+    contentpage: fs.readFileSync("./src/layout/template/contentpage.html", "utf8"),
+    landingpage: fs.readFileSync("./src/layout/template/landingpage.html", "utf8")
   },
 
   partials: {
-    header: fs.readFileSync("./src/global/layout/header/header.html", "utf8"),
-    footer: fs.readFileSync("./src/global/layout/footer/footer.html", "utf8"),
-    breadcrumbs: fs.readFileSync("./src/components/breadcrumbs/breadcrumbs.html", "utf8"),
+    header: fs.readFileSync("./src/layout/header/header.html", "utf8"),
+    footer: fs.readFileSync("./src/layout/footer/footer.html", "utf8"),
+    breadcrumbs: fs.readFileSync("./src/components/breadcrumbs/breadcrumbs.bs5.html", "utf8"),
     sidenav: fs.readFileSync("./src/components/nav/sidenav-example.html", "utf8"),
     inpagenav: fs.readFileSync("./src/components/inpage-nav/inpagenav.html", "utf8"),
   },
@@ -26,7 +24,7 @@ const ds = {
 
   makeTemplate: function(options) {
   
-    let content = fs.readFileSync(`./src/global/layout/content/${options.content}.html`, "UTF-8");
+    let content = fs.readFileSync(`./src/layout/content/${options.content}.html`, "UTF-8");
 
     let compiledHTML = mustache.render(
       this.layouts[options.layout], {
@@ -56,13 +54,13 @@ ds.makeTemplate({
   PageHeading : "Register your vehicle or motorcycle",
   PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
   components  : {
-    alert: ds.makeComponent("alerts/alerts.html", {
+    alert: ds.makeComponent("alert/alert.bs5.html", {
       type: "danger",
-      hlevel: "H3",
+      hlevel: function() { return "h2" },
       title: "Road closure",
       message: "The Bruce Highway is closed at <strong>Caloundara</strong> due to bushfire activity. <a href='#'>Find our more</a>."
     }),
-    button: ds.makeComponent("buttons/button.html", {
+    button: ds.makeComponent("button/button.bs5.html", {
       class: "btn-outline-secondary",
       isbutton: false,
       islink: true,
@@ -70,7 +68,7 @@ ds.makeTemplate({
       label: "Call to action",
       target: "_blank"
     }),
-    cardblock: ds.makeComponent("cards/cards-block.html", { 
+    cardblock: ds.makeComponent("card/card-block.bs5.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -80,30 +78,33 @@ ds.makeTemplate({
           "footer": false
         },
         {
-            "title" : "A longer article title",
-            "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-            "image": "assets/img/ds-example-image-2.jpg",
-            "alt": "A photo of wheat in a field lit by soft sunlight",
-            "link": "https://web.dev",
-            "footer": false
+          "title" : "A longer article title",
+          "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+          "image": "assets/img/ds-example-image-2.jpg",
+          "alt": "A photo of wheat in a field lit by soft sunlight",
+          "link": "https://web.dev",
+          "footer": false
         },
         {
-            "title" : "A topic headline",
-            "description": "This is a supporting text below.",
-            "image": "assets/img/ds-example-image-3.jpg",
-            "alt": "A photo of the base of Uluru at sunset",
-            "link": "https://web.dev",
-            "footer": false
+          "title" : "A topic headline",
+          "description": "This is a supporting text below.",
+          "image": "assets/img/ds-example-image-3.jpg",
+          "alt": "A photo of the base of Uluru at sunset",
+          "link": "https://web.dev",
+          "footer": false
         }]
     }),
-    table: ds.makeComponent("tables/table.html", {}),
-    callout: ds.makeComponent("callout/callout.html", {
+    table: ds.makeComponent("table/table.bs5.html", {}),
+    callout: ds.makeComponent("callout/callout.bs5.html", {
       title: "This is a callout title",
       description: "This is a callout description",
     }),
-    blockquote: ds.makeComponent("blockquote/blockquote.html", {
+    blockquote: ds.makeComponent("blockquote/blockquote.bs5.html", {
       title: "Blockquote title",
       description: "Fees will increase from 1 July 2024. The new fees will be available on this page from 1 July 2024.",
+    }),
+    accordion: ds.makeComponent("accordion/accordion.bs5.html", {
+      accordionItems: JSON.parse(fs.readFileSync("./src/components/accordion/data.json", "utf8"))
     })
   }
 });
@@ -117,7 +118,7 @@ ds.makeTemplate({
   PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
   theme       : "dark",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.html", { 
+    cardblock: ds.makeComponent("card/card-block.bs5.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -143,7 +144,7 @@ ds.makeTemplate({
             "footer": false
         }]
     }),
-    table: ds.makeComponent("tables/table.html", {})
+    table: ds.makeComponent("table/table.bs5.html", {})
   }
 });
 
@@ -153,7 +154,7 @@ ds.makeTemplate({
   content     : "landing-with-cards",
   outfile     : "landing.html",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.html", { 
+    cardblock: ds.makeComponent("card/card-block.bs5.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -191,7 +192,7 @@ ds.makeTemplate({
   content     : "landing-with-cards",
   outfile     : "landing-dark.html",
   components  : {
-    cardblock: ds.makeComponent("cards/cards-block.html", { 
+    cardblock: ds.makeComponent("card/card-block.bs5.html", { 
         cards: [{
           "title" : "An article title",
           "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
@@ -201,20 +202,20 @@ ds.makeTemplate({
           "footer": "Updated 2 days ago"
         },
         {
-            "title" : "A longer article title",
-            "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-            "image": "assets/img/ds-example-image-2.jpg",
-            "alt": "A photo of wheat in a field lit by soft sunlight",
-            "link": "https://web.dev",
-            "footer": "Updated 4 days ago"
+          "title" : "A longer article title",
+          "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+          "image": "assets/img/ds-example-image-2.jpg",
+          "alt": "A photo of wheat in a field lit by soft sunlight",
+          "link": "https://web.dev",
+          "footer": "Updated 4 days ago"
         },
         {
-            "title" : "A topic headline",
-            "description": "This is a supporting text below.",
-            "image": "assets/img/ds-example-image-3.jpg",
-            "alt": "A photo of the base of Uluru at sunset",
-            "link": "https://web.dev",
-            "footer": "Updated last week"
+          "title" : "A topic headline",
+          "description": "This is a supporting text below.",
+          "image": "assets/img/ds-example-image-3.jpg",
+          "alt": "A photo of the base of Uluru at sunset",
+          "link": "https://web.dev",
+          "footer": "Updated last week"
         }]
     })
   },
@@ -241,10 +242,10 @@ ds.makeTemplate({
   outfile     : "components.html",
   PageHeading : "POC list of components",
   PageLead    : "This page shows examples of all components.",
-  sidenav     : fs.readFileSync("./src/global/layout/content/sidenav-components.html", "utf8"),
+  sidenav     : fs.readFileSync("./src/layout/content/sidenav-components.html", "utf8"),
   inpagenav  : "",
   components: {
-    cardblock: ds.makeComponent("cards/cards-block.html", { 
+    cardblock: ds.makeComponent("card/card-block.bs5.html", { 
       cards: [{
         "title" : "An article title",
         "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",

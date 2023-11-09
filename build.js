@@ -48,6 +48,14 @@ const buildConfig = {
 			  		to: ['./dist/'],
 				},
 				{
+					from: ['./src/components/**/*.dxp.html'],
+					to: ['./dist/components/dxp/'],
+			  	},
+				{
+					from: ['./src/components/**/*.bs5.html'],
+					to: ['./dist/components/bs5/'],
+			  	},
+				{
 					from: ['./src/img/*'],
 					to: ['./dist/assets/img'],
 				},

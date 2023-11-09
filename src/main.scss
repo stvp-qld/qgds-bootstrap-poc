@@ -138,13 +138,13 @@ $enable-dark-mode: true;
 
 
 @import "./components/accordion/accordion.scss";
-@import "./components/alerts/alerts.scss";
+@import "./components/alert/alert.scss";
 @import "./components/banner/banner.scss";
 @import "./components/blockquote/blockquote.scss";
 @import "./components/breadcrumbs/breadcrumbs.scss";
-@import "./components/buttons/buttons.scss";
+@import "./components/button/button.scss";
 @import "./components/callout/callout.scss";
-@import "./components/cards/cards.scss";
+@import "./components/card/card.scss";
 @import "./components/carousel/carousel.scss";
 @import "./components/forms/forms.scss";
 // @import "./components/header/header.scss";
@@ -153,14 +153,14 @@ $enable-dark-mode: true;
 @import "./components/inpage-nav/inpage-nav.scss";
 @import "./components/nav/nav.scss"; //includes side-nav.scss
 @import "./components/navbar/navbar.scss";
-@import "./components/tables/tables.scss";
+@import "./components/table/table.scss";
 @import "./components/pagination/pagination.scss";
 @import "./components/typography/typography.scss";
 
 // Common Layout Blocks
-@import "./global/layout/footer/footer.scss";
-@import "./global/layout/header/header.scss";
-@import "./global/layout/content/content.scss";
+@import "./layout/footer/footer.scss";
+@import "./layout/header/header.scss";
+@import "./layout/content/content.scss";
 
 // Themes
 @import "./scss/qld-theme.scss";
