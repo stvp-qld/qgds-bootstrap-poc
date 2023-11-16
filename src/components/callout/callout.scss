@@ -1,16 +1,27 @@
+// Callout Vars
+
+// Default
 .callout {
     --#{$prefix}callout-padding: 1.25rem;
     --#{$prefix}callout-bg-color: #{$qld-extra-light-grey};
     --#{$prefix}callout-border-color: #{$qld-brand-secondary};
     --#{$prefix}callout-border-width: 0.25rem;
-
     --#{$prefix}callout-title-color: #03213f;
     --#{$prefix}callout-text-color: #414141;
+}
 
+//Dark theme
+//https://getbootstrap.com/docs/5.3/customize/color-modes/#enable-dark-mode
+
+@include color-mode(dark) {
+
+}
+
+//Define component styles
+.callout {
     background-color: var(--#{$prefix}callout-bg-color);
     border-left: solid var(--#{$prefix}callout-border-width) var(--#{$prefix}callout-border-color);
     padding: var(--#{$prefix}callout-padding);
-
     
     &-title {
         font-weight: 600;

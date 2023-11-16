@@ -3,7 +3,6 @@
 
 //SASS variables;
 $accordion-padding:             1rem;
-
 $accordion-icon-color:          $qld-brand-secondary-dark;
 $accordion-icon-active-color:   $qld-brand-secondary-dark;
 $accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
@@ -12,9 +11,10 @@ $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w
 
 // CSS Scoped Variables
 //--#{$prefix}{component}-{property}
+
 .accordion {
-    --#{$prefix}accordion-color: #{$body-color};
-    --#{$prefix}accordion-bg: #{$body-bg};
+    --#{$prefix}accordion-color: var(--#{$prefix}body-color);
+    --#{$prefix}accordion-bg: var(--#{$prefix}body-bg);
     --#{$prefix}accordion-transition: #{$accordion-transition};
     --#{$prefix}accordion-border-color: #{$qld-light-grey};
     --#{$prefix}accordion-border-width: 1px;
@@ -41,13 +41,19 @@ $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w
 // For example, .body-bg-color will already be defined on :root, no need to redefine here.
 // Only provide specific variables that aren't available from the global (:root) scope
 
-[data-theme="dark"] {
+[data-bs-theme="dark"] {
     .accordion {
-        //...
+        --#{$prefix}accordion-btn-bg: var(--#{$prefix}body-bg);
+        --#{$prefix}accordion-btn-color: var(--#{$prefix}white );
+        --#{$prefix}accordion-active-bg: var(--#{$prefix}brand-primary-dark );
+        --#{$prefix}accordion-active-color: var(--#{$prefix}white );
     }
 }
 
 .accordion {
+
+    margin-bottom: 2rem;
+
     &-button {
         font-size: 1.25rem;
         font-weight: 600;

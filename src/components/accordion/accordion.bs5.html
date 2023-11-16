@@ -1,6 +1,6 @@
-<!-- QGDS Partial: accordion -->
+<!-- QGDS Component: Accordion -->
 
-<div class="accordion" id="accordionExample">
+<div class="accordion {{variant}}" id="{{groupid}}">
     {{#accordionItems}}
     <div class="accordion-item">
         <h2 class="accordion-header" id="heading{{id}}">
@@ -10,7 +10,7 @@
             </button>
         </h2>
         <div id="collapse{{id}}" class="accordion-collapse collapse {{show}}" aria-labelledby="heading{{id}}"
-            data-bs-parent="#accordionExample">
+            data-bs-parent="#{{groupid}}">
             <div class="accordion-body">
                 {{content}}
             </div>

@@ -1,12 +1,14 @@
-<!-- QGDS Partial: breadcrumbs -->
+<!-- QGDS Component: Breadcrumbs -->
 
 <div class="row">
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Topic</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Current page</li>
+                {{breadcrumbs}}
+                <li class="breadcrumb-item {{linkclass}}" aria-current="{{ariacurrent}}" >
+                    <a href="{{link}}">{{linktext}}</a>
+                </li>
+                {{/breadcrumbs}}
             </ol>
         </nav>
     </div>

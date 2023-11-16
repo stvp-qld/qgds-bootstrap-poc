@@ -282,15 +282,17 @@
         <div class="container-fluid qld-banner">
             <div class="container">
 
-                <!-- QGDS Partial: breadcrumbs -->
+                <!-- QGDS Component: Breadcrumbs -->
 
 <div class="row">
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Topic</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Current page</li>
+                {{breadcrumbs}}
+                <li class="breadcrumb-item {{linkclass}}" aria-current="{{ariacurrent}}" >
+                    <a href="{{link}}">{{linktext}}</a>
+                </li>
+                {{/breadcrumbs}}
             </ol>
         </nav>
     </div>
@@ -319,64 +321,7 @@
                     <div class="col-12">
                         
                         <h3>Popular</h3>
-<div class="row row-cols-1 row-cols-md-3 g-2">
 
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-1.jpg" class="card-img-top" alt="A photo of cliffs by the ocean with trees in the foreground" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">An article title</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-
-            <div class="card-footer">Updated 2 days ago</div>
-
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-2.jpg" class="card-img-top" alt="A photo of wheat in a field lit by soft sunlight" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A longer article title</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-
-            <div class="card-footer">Updated 4 days ago</div>
-
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-3.jpg" class="card-img-top" alt="A photo of the base of Uluru at sunset" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A topic headline</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a supporting text below.
-                </p>
-            </div>
-
-            <div class="card-footer">Updated last week</div>
-
-        </div>
-    </div>
-
-</div>
 
 
                         

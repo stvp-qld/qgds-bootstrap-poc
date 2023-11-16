@@ -6,20 +6,20 @@ const components = [
     "banner",
     "blockquote",
     "breadcrumbs",
-    //"button",
+    "button",
     "callout",
     "card",
     "carousel",
-    //"checkbox",
-    //"forms",
-    //"icons",
+    "checkbox",
+    "forms",
+    "icons",
     "inpage-nav",
-    //"nav",
-    //"navbar",
+    "nav",
+    "navbar",
     "pagination",
-    //"radio",
+    "radio",
     "table",
-    //"typography"
+    "typography"
 ];
 
 
@@ -33,15 +33,15 @@ function prepFiles() {
 
     components.forEach(async component => {
     
-        let filenameHTML = `${targetDir}/${component}/${component}.bs5.html`;
+        //let filenameHTML = `${targetDir}/${component}/${component}.bs5.html`;
         let filenameJSON = `${targetDir}/${component}/data.json`;
 
-        let targetname = `${targetDir}/${component}/${component}.${prefix}.html`;
-        let contentstring = `<!-- QGDS Partial: ${component} -->`;
+        //let targetname = `${targetDir}/${component}/${component}.data.json`;
+        //let contentstring = `<!-- QGDS Partial: ${component} -->`;
 
         try {
-            await fs.promises.copyFile(filenameHTML, targetname);
-            console.log(`Copied ${filenameHTML} to ${targetname}`);
+            await fs.promises.unlink(filenameJSON);
+            console.log(`Deleted ${filenameJSON}`);
         } catch (err) {
             console.error(`Error copying file: ${err}`);
         }
