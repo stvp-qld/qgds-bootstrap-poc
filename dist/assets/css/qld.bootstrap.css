@@ -17721,8 +17721,15 @@ blockquote-text,
 .callout-text {
   padding-top: 1rem;
   margin-bottom: 0;
-  line-height: 1.5rem;
+}
+.callout-text p,
+.callout-text ul,
+.callout-text ol {
+  line-height: 1.5;
   color: var(--qld-callout-text-color);
+}
+.callout-text p:last-of-type {
+  margin-bottom: 0;
 }
 [data-bs-theme=dark] .card {
   --qld-card-bg: var(--qld-white);

@@ -32,9 +32,18 @@
     }
 
     &-text {
+
         padding-top: 1rem;
         margin-bottom: 0;
-        line-height: 1.5rem;
-        color: var(--#{$prefix}callout-text-color);
+        
+        p, ul, ol {
+            line-height: 1.5;
+            color: var(--#{$prefix}callout-text-color);    
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+        
     }
 }
