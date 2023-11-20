@@ -34,7 +34,7 @@ QGDSTemplate.make({
 			  data: {
 				  classes: "alert-success",
 				  title: "Your transaction is complete",
-          content: "You're reference number is ATMR-1234-456. <a href='#'>Download a receipt</a>"
+          content: "<p>You're reference number is ATMR-1234-456. <a href='#'>Download a receipt</a></p>"
 			  },
 		  }),
       reminder: QGDSComponent.make("alert", {

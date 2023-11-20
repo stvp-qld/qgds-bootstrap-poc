@@ -30,6 +30,10 @@ $alert-icons: (
     --#{$prefix}alert-color: var(--body-color);
     --#{$prefix}alert-bg: var(--body-bg);
 
+
+    background: var(--#{$prefix}alert-bg);
+    padding-left: 4rem;
+
     .alert-heading {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -37,8 +41,9 @@ $alert-icons: (
         padding: 0;
     }
 
-    background: var(--#{$prefix}alert-bg);
-    padding-left: 4rem;
+    p:last-child {
+        margin-bottom: 0;
+    }
 
     &:before,
     &:after {

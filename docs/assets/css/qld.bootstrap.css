@@ -17474,6 +17474,9 @@ header .header-site-search {
   margin: 0 0 1rem 0;
   padding: 0;
 }
+.alert p:last-child {
+  margin-bottom: 0;
+}
 .alert:before,
 .alert:after {
   content: "";
