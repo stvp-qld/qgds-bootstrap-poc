@@ -279,15 +279,17 @@
         <div class="container-fluid qld-banner">
             <div class="container">
 
-                <!-- QGDS Partial: breadcrumbs -->
+                <!-- QGDS Component: Breadcrumbs -->
 
 <div class="row">
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Topic</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Current page</li>
+                {{breadcrumbs}}
+                <li class="breadcrumb-item {{linkclass}}" aria-current="{{ariacurrent}}" >
+                    <a href="{{link}}">{{linktext}}</a>
+                </li>
+                {{/breadcrumbs}}
             </ol>
         </nav>
     </div>
@@ -429,41 +431,15 @@
                     <!-- //order-lg-first -->
                     <div class="col-12 col-lg-9 order-lg-last ps-lg-72">
                         
-                        <div class="qld-inpage-nav">
+                        
 
-    <h2 class="nav-title">On this page</h2>
+                        
 
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#section-heading">Section heading</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#content-heading">Content heading</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#inspection">Pre-registration inspection</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#fees-and-charges">Fees and charges</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#related-services">Related services</a>
-        </li>
-    </ul>
 
-</div>
-
-                        <h2 id="section-heading">Section heading (H2)</h2>
+<h2 id="section-heading">Section heading (H2) test</h2>
 
 
 
-
-<!-- QGDS Partial: callout -->
-<div class="example-component ">
-    <h2>Register your vehicle or motorcycle</h2>
-    <p>Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.</p>
-    <a href="https:&#x2F;&#x2F;www.service.transport.qld.gov.au&#x2F;checkrego&#x2F;application&#x2F;TermAndConditions.xhtml" class="btn btn-secondary" target="_blank">Register online</a>
-</div>
 
 <!-- Insert Dismissable Alert -->
 
@@ -484,52 +460,7 @@
     station that provides vehicle registration services—please call to confirm before visiting.
 </p>
 
-<!-- QGDS Component: Accordion -->
 
-<div class="accordion " id="accordion-group-1">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item #1
-            </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordion-group-1">
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
-            </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo"
-            data-bs-parent="#accordion-group-1">
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
-            </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingThree"
-            data-bs-parent="#accordion-group-1">
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </div>
-        </div>
-    </div>
-</div>
 
 <p>If you have not already done so, check that the vehicle is unencumbered by searching on the
     <a href="#" target="_blank">Personal Property Securities Register (PPSR)</a> website. It will show if there is money
@@ -550,7 +481,7 @@
 
 <p>You can't have a concession on 2 vehicles at the same timefor some concession types.</p>
 
-<!-- QGDS Partial: callout -->
+
 
 
 <h2 id="inspection">Pre-registration inspection</h2>
@@ -571,67 +502,13 @@
 
 <p>Commencing on 01 July 2023, registration fees for vehicle registration are:</p>
 
-<!-- QGDS Partial: table -->
+
 
 <p>For more information on registration fees, refer to the <a href="#" target="_blank">Registration fees</a> page.</p>
 
 
 <h2 id="related-services">Related services</h2>
-<div class="row row-cols-1 row-cols-md-3 g-2">
 
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-1.jpg" class="card-img-top" alt="A photo of cliffs by the ocean with trees in the foreground" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">An article title</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-2.jpg" class="card-img-top" alt="A photo of wheat in a field lit by soft sunlight" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A longer article title</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="assets&#x2F;img&#x2F;ds-example-image-3.jpg" class="card-img-top" alt="A photo of the base of Uluru at sunset" />
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="https:&#x2F;&#x2F;web.dev">A topic headline</a>
-                    
-                </h3>
-
-                <p class="card-text">
-                    This is a supporting text below.
-                </p>
-            </div>
-
-
-        </div>
-    </div>
-
-</div>
                         
                     </div>
                                     

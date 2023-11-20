@@ -1,5 +1,5 @@
 {
-	"classes": "alert-danger",
+	"classes": "alert-danger mb-5",
 	"hlevel": "h2",
 	"title": "Road closure",
 	"content": "The Bruce Highway is closed at <strong>Caloundara</strong> due to bushfire activity. <a href='#'>Find our more</a>."

@@ -1,111 +1,63 @@
+/**
+ * QGDSTemplate module for building HTML templates.
+ * @module QGDSTemplate
+ */
+
 import fs from "fs";
 import mustache from "mustache";
 
 // Master templates
-const template = {
+const QGDSTemplate = {
+
   layouts: {
-    contentpage: fs.readFileSync("./src/contentpage.html", "utf8"),
-    landingpage: fs.readFileSync("./src/landingpage.html", "utf8")
+    contentpage: fs.readFileSync("./src/layout/template/contentpage.html", "utf8"),
+    landingpage: fs.readFileSync("./src/layout/template/landingpage.html", "utf8")
   },
-  partials: {
-    header: fs.readFileSync("./src/partials/header.html", "utf8"),
-    breadcrumbs: fs.readFileSync("./src/partials/breadcrumbs.html", "utf8"),
-    sidenav: fs.readFileSync("./src/partials/sidenav.html", "utf8"),
-    inpagenav: fs.readFileSync("./src/partials/inpagenav.html", "utf8"),
-    footer: fs.readFileSync("./src/partials/footer.html", "utf8")
+
+  sections: {
+    header: fs.readFileSync("./src/layout/header/header.html", "utf8"),
+    footer: fs.readFileSync("./src/layout/footer/footer.html", "utf8"),
+    inpagenav: '',
+    breadcrumbs: '',
+    sidenav: fs.readFileSync("./src/components/nav/sidenav-example.html", "utf8"),
   },
-  build: function(options) {
+
+  /**
+   * Builds a template using the specified options and saves it to the output file.
+   * @param {Object} options - The options for building the template.
+   * @param {string} options.layout - The layout template to be used. Layout is the top level HTML5 template including HEAD, footer JS etc and other fixed elements liked navigation and search bar
+   * @param {string} options.content - The content file to be rendered. Content is the main body content of the page.
+   * @param {string} [options.header] - The header section template.
+   * @param {string} [options.breadcrumbs] - The breadcrumbs section template.
+   * @param {string} [options.sidenav] - The sidenav section template.
+   * @param {string} [options.footer] - The footer section template.
+   * @param {string} options.outfile - The output file path. Defaults to dist/index.html but can be any file name.
+   */
+
+  make: function(options) {
+  
+    let content = fs.readFileSync(`./src/layout/content/${options.content}.html`, "UTF-8");
     
-    console.log(options);
+    console.log(`Building template ./src/layout/content/${options.content}.html`);
 
     let compiledHTML = mustache.render(
-        this.layouts[options.layout], 
-        {
-            header: options.header || this.partials.header,
-            breadcrumbs: options.breadcrumbs || this.partials.breadcrumbs,
-            sidenav: options.sidenav || this.partials.sidenav,
-            inpagenav: options.inpagenav || this.partials.inpagenav,
-            footer: options.footer || this.partials.footer,
-            main: mustache.render(options.main, options.data || {}),
-            ...options
+      this.layouts[options.layout], {
+        header: options.header || this.sections.header,
+        breadcrumbs: options.breadcrumbs || this.sections.breadcrumbs,
+        sidenav: options.sidenav || this.sections.sidenav,
+        footer: options.footer || this.sections.footer,
+        main: mustache.render( content, options || {}),
+        theme: options.theme || "qgds-default",
+        ...options
       }
     );
 
-    fs.writeFileSync(`./dist/${options.filename}`, compiledHTML);
+    fs.writeFileSync(`./dist/${options.outfile}`, compiledHTML);
+    console.log(`Built template ./dist/${options.outfile}`);
+
   }
 };
 
-export default template;
-
-// Default content
-//const main = fs.readFileSync("./src/partials/main.html", "utf8");
-
-// Function to build and export a HTML template file
-// function buildTemplatePage(config) {
-    
-//     const main = fs.readFileSync(`./src/partials/${config.partial}.html`, "utf8");
-
-// 	const compiledHTML = mustache.render(
-//         layouts[config.layout], {
-// 		    header,
-// 		    breadcrumbs,
-// 		    sidenav,
-// 		    inpagenav,
-// 		    footer,
-// 		    main: mustache.render(main, config),
-//             ...config
-// 	});
-
-// 	fs.writeFileSync(`./dist/${config.filename}`, compiledHTML);
-// }
-
-//const pages = [
-    // {
-    //     layout      : "contentpage",
-	//     partial     : "main",
-	//     filename    : "index.html",
-	//     PageHeading : "Register your vehicle or motorcycle",
-	//     PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
-    //     theme       : "light"
-    // },
-    // {
-    //     layout      : "contentpage",
-	//     partial     : "main",
-	//     filename    : "index-dark.html",
-	//     PageHeading : "Register your vehicle or motorcycle",
-	//     PageLead    : "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
-    //     theme       : "dark"
-    // },
-//     {
-//         layout      : "landingpage",
-//         partial     : "cards",
-//         cards       : [
-//             {
-//                 "title" : "An article title",
-//                 "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-//                 "image": "https://picsum.photos/id/89/450/254"    
-//             },
-//             {
-//                 "title" : "A longer article title that wraps over two lines",
-//                 "description": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-//                 "image": "https://picsum.photos/id/120/450/254"
-//             },
-//             {
-//                 "title" : "A topic headline",
-//                 "description": "This is a supporting text below.",
-//                 "image": "https://picsum.photos/id/46/450/254"
-//             }
-//         ],
-// 	    filename    : "landing.html",
-// 	    PageHeading : "Education and training",
-// 	    PageLead    : "",
-//         theme       : "light",
-//     }
-// ];
-
-//pages.map( ( obj ) => buildTemplatePage(obj) );
-
-// Write the final HTML to an output file
-//fs.writeFileSync('./dist/index.html', finalHTML);
+export default QGDSTemplate;
 
 console.log("HTML build completed.");
