@@ -48,7 +48,7 @@ QGDSTemplate.make({
 		callout: QGDSComponent.make("callout", {
 			data: {
 				title: "This is a callout title",
-				description: "This is a callout description",
+				content: "This is a callout description",
         classes: "mb-5"
 			},
 		}),
