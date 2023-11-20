@@ -33,12 +33,17 @@ $alert-icons: (
 
     background: var(--#{$prefix}alert-bg);
     padding-left: 4rem;
+    
 
     .alert-heading {
+        line-height: 1.5;
         font-size: 1.5rem;
-        line-height: 2rem;
         margin: 0 0 1rem 0;
         padding: 0;
+    }
+    
+    p, ul, ol {
+        line-height: 1.5;
     }
 
     p:last-of-type {
