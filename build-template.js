@@ -22,17 +22,25 @@ QGDSTemplate.make({
 		"Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
 	
   breadcrumbs: QGDSComponent.make("breadcrumbs"),
-	
-    components: {
+  
+  components: {
 		inpagenav: QGDSComponent.make("inpagenav"),
 		accordion: QGDSComponent.make("accordion"),
-		closure: QGDSComponent.make("alert"),
-		receipt: QGDSComponent.make("alert", {
-			data: {
-				classes: "alert-success",
-				title: "Your transaction is complete",
-			},
-		}),
+		
+    //4 different ways to load an alert
+    alerts: {
+      closure: QGDSComponent.make("alert"),
+      receipt: QGDSComponent.make("alert", {
+			  data: {
+				  classes: "alert-success",
+				  title: "Your transaction is complete",
+          content: "You're reference number is ATMR-1234-456. <a href='#'>Download a receipt</a>"
+			  },
+		  }),
+      reminder: QGDSComponent.make("alert", {
+			  datafile: "./src/components/alert/service-unavailable.json"
+      }),
+    },
 		button: QGDSComponent.make("button"),
 		card: QGDSComponent.make("card"),
 		table: QGDSComponent.make("table"),
