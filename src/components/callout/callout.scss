@@ -8,6 +8,8 @@
     --#{$prefix}callout-border-width: 0.25rem;
     --#{$prefix}callout-title-color: #03213f;
     --#{$prefix}callout-text-color: #414141;
+    --#{$prefix}callout-margin-bottom: 1rem;
+
 }
 
 //Dark theme
@@ -19,9 +21,11 @@
 
 //Define component styles
 .callout {
+
     background-color: var(--#{$prefix}callout-bg-color);
     border-left: solid var(--#{$prefix}callout-border-width) var(--#{$prefix}callout-border-color);
     padding: var(--#{$prefix}callout-padding);
+    margin-bottom: var(--#{$prefix}callout-margin-bottom);
     
     &-title {
         font-weight: 600;
@@ -44,6 +48,6 @@
         p:last-of-type {
             margin-bottom: 0;
         }
-        
+
     }
 }

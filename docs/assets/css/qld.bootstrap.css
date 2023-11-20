@@ -17705,11 +17705,13 @@ blockquote-text,
   --qld-callout-border-width: 0.25rem;
   --qld-callout-title-color: #03213f;
   --qld-callout-text-color: #414141;
+  --qld-callout-margin-bottom: 1rem;
 }
 .callout {
   background-color: var(--qld-callout-bg-color);
   border-left: solid var(--qld-callout-border-width) var(--qld-callout-border-color);
   padding: var(--qld-callout-padding);
+  margin-bottom: var(--qld-callout-margin-bottom);
 }
 .callout-title {
   font-weight: 600;
