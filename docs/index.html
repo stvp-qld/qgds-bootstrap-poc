@@ -285,6 +285,15 @@
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
+                <li class="breadcrumb-item ">
+                    <a href="#">Home</a>
+                </li>
+                <li class="breadcrumb-item ">
+                    <a href="#">Topic</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a href="#">Current page</a>
+                </li>
             </ol>
         </nav>
     </div>
@@ -432,9 +441,24 @@
 
 <div class="qld-inpage-nav">
 
-    <h2 class="nav-title"></h2>
+    <h2 class="nav-title">On this page</h2>
 
     <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="##section-heading">Section heading</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="##content-heading">Content heading</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="##inspection">Pre-registration inspection</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="##fees-and-charges">Fees and charges</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="##related-services">Related services</a>
+        </li>
     </ul>
 
 </div>
@@ -442,11 +466,9 @@
 
 <h2 id="section-heading">Section heading (H2) test</h2>
 
-
-
 <!-- QGDS Component: Callout -->
 
-<div class="callout">
+<div class="callout mb-5">
     <h3 class="callout-title">This is a callout title</h3>
     <p class="callout-text">This is a callout description</p>
 </div>
@@ -456,10 +478,18 @@
 
 
 <!-- Insert Success Alert -->
-<div class="alert alert-info" role="alert">
-    <h4 class="alert-heading">An error occurred</h4>
-    A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+<!-- QGDS Component: Alert -->
+<div class="alert alert-danger mb-5" role="alert">
+    <h4 class="alert-heading">Road closure</h4>
+    The Bruce Highway is closed at <strong>Caloundara</strong> due to bushfire activity. <a href='#'>Find our more</a>.
 </div>
+
+<!-- QGDS Component: Alert -->
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Your transaction is complete</h4>
+    The Bruce Highway is closed at <strong>Caloundara</strong> due to bushfire activity. <a href='#'>Find our more</a>.
+</div>
+
 
 <p>When you buy a new or used vehicle from a motor dealer, generally they will arrange
     registration and compulsory third party (CTP) insurance for you. You will need to provide
@@ -473,7 +503,49 @@
 
 <!-- QGDS Component: Accordion -->
 
-<div class="accordion " id="">
+<div class="accordion " id="accordion-group-1">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordion-group-1">
+            <div class="accordion-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo"
+            data-bs-parent="#accordion-group-1">
+            <div class="accordion-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingThree"
+            data-bs-parent="#accordion-group-1">
+            <div class="accordion-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </div>
+        </div>
+    </div>
 </div>
 
 <p>If you have not already done so, check that the vehicle is unencumbered by searching on the
@@ -497,7 +569,7 @@
 
 <!-- QGDS Component: Callout -->
 
-<div class="callout">
+<div class="callout mb-5">
     <h3 class="callout-title">This is a callout title</h3>
     <p class="callout-text">This is a callout description</p>
 </div>
@@ -527,9 +599,25 @@
     <table class="table ">
         <thead>
             <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Team</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
+            <tr class="">
+                <td>John Doe</td>
+                <td>26</td>
+                <td>A</td>
+                <td>Active</td>
+            </tr>
+            <tr class="">
+                <td>Jane Doe</td>
+                <td>24</td>
+                <td>B</td>
+                <td>Active</td>
+            </tr>
         </tbody>
     </table>
 </div>
