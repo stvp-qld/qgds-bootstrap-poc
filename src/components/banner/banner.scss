@@ -1,64 +1,14 @@
 // Variables
 .qld-banner {
-
-    --#{$prefix}banner-angle: 30deg;
+    --banner-angle: 29%; //(angle in degrees)
+    --banner-image: url('../img/sample-header-pic.jpg');
 
     //Defaults
-    --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
     --#{$prefix}banner-bg-color: var(--#{$prefix}light-grey);
     --#{$prefix}banner-title-color: var(--#{$prefix}headings-color);
     --#{$prefix}banner-lead-color: var(--#{$prefix}body-color);
 
-
-    &.banner-default {
-        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
-        --#{$prefix}banner-bg-color: var(--#{$prefix}light-grey);
-    }
-
-    &.banner-alt {
-        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
-        --#{$prefix}banner-bg-color: var(--#{$prefix}alt-grey);
-    }
-
-    &.banner-dark {
-        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
-        --#{$prefix}banner-bg-color: var(--#{$prefix}primary);
-        --#{$prefix}banner-title-color: #FFF;
-        --#{$prefix}banner-lead-color: #FFF;
-        
-        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
-        --qld-link-color-rgb: 255, 255, 255;
-        --qld-breadcrumb-divider-color: #FFF;
-    
-    }
-
-    &.banner-dark-alt {
-        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
-        --#{$prefix}banner-bg-color: #0C3B71; //Todo, add this colour to variables.scss (?) Was defined in Figma. 
-        --#{$prefix}banner-title-color: var(--#{$prefix}white);
-        --#{$prefix}banner-lead-color: var(--#{$prefix}white);
-        --#{$prefix}banner-breadcrumb-color: var(--#{$prefix}white);
-    
-        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
-        --qld-link-color-rgb: 255, 255, 255;
-        --qld-breadcrumb-divider-color: #FFF;
-    }
-}
-
-
-@include color-mode(dark) {
-    .qld-banner {
-        // Inherits from :root dark mode variables, but can be overridden here.
-        --#{$prefix}banner-title-color: var(--#{$prefix}headings-color);
-        --#{$prefix}banner-lead-color: var(--#{$prefix}body-color);
-    }
-}
-
-
-
-// Component
-.qld-banner {
-
+    // Component
     background-color: var(--#{$prefix}banner-bg-color);
     padding: 1rem 0 2rem 0;
     position: relative;
@@ -77,7 +27,7 @@
         height: 100%;
         background-image: var(--banner-image);
         background-size: cover;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 29% 100%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, var(--banner-angle) 100%);
     }
 
     @include media-breakpoint-down(md) {
@@ -91,6 +41,7 @@
         line-height: 1.3;  
         color: var(--#{$prefix}banner-title-color);
         margin-bottom: 1.5rem;
+        max-width: 90%;
     }
 
     .banner-lead {
@@ -102,5 +53,43 @@
 
     .breadcrumb {
         color: var(--#{$prefix}banner-breadcrumb-color);
+    }
+
+    // Banner Variations
+    &.banner-default {
+        --#{$prefix}banner-bg-color: var(--#{$prefix}light-grey);
+    }
+
+    &.banner-alt {
+        --#{$prefix}banner-bg-color: var(--#{$prefix}alt-grey);
+    }
+
+    &.banner-dark {
+        --#{$prefix}banner-bg-color: var(--#{$prefix}primary);
+        --#{$prefix}banner-title-color: #FFF;
+        --#{$prefix}banner-lead-color: #FFF;
+        
+        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
+        --qld-link-color-rgb: 255, 255, 255;
+        --qld-breadcrumb-divider-color: #FFF;
+    }
+
+    &.banner-dark-alt {
+        --#{$prefix}banner-bg-color: #0C3B71; //Todo, add this colour to variables.scss (?) Was defined in Figma. 
+        --#{$prefix}banner-title-color: var(--#{$prefix}white);
+        --#{$prefix}banner-lead-color: var(--#{$prefix}white);
+        --#{$prefix}banner-breadcrumb-color: var(--#{$prefix}white);
+    
+        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
+        --qld-link-color-rgb: 255, 255, 255;
+        --qld-breadcrumb-divider-color: #FFF;
+    }
+}
+
+@include color-mode(dark) {
+    .qld-banner {
+        // Inherits from :root dark mode variables, but can be overridden here.
+        --#{$prefix}banner-title-color: var(--#{$prefix}headings-color);
+        --#{$prefix}banner-lead-color: var(--#{$prefix}body-color);
     }
 }
