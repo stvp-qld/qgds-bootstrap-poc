@@ -1,9 +1,10 @@
 <!-- QGDS Partial: banner -->
 
-<div class="container-fluid qld-banner {{classes}}" style="--banner-image: url('../img/demo-image-unsplash-motorbike.jpg')">
+<div class="container-fluid qld-banner {{classes}}">
 
     <div class="container">
         <div class="row">
+            
             <div class="col-12 col-md-7">
 
                 {{{breadcrumbs}}}
@@ -12,6 +13,11 @@
                 <p class="banner-lead">{{{content}}}</p>
 
             </div>
+
+            <div class="col-12 col-md-5 position-relative">
+                <div class="banner-image {{image.classes}}" data-image-url="{{image.url}}"></div>
+            </div>
+
         </div>
     </div>
 
