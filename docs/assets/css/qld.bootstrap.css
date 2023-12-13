@@ -17676,6 +17676,7 @@ header .header-site-search {
   height: 100%;
   background-image: var(--banner-image);
   background-size: cover;
+  background-position: center center;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, var(--banner-angle) 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, var(--banner-angle) 100%);
 }
