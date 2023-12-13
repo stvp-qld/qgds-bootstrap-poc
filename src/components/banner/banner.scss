@@ -1,35 +1,94 @@
 // Variables
 .qld-banner {
-    --#{$prefix}banner-bg: var(--#{$prefix}light-grey);
+
+    --#{$prefix}banner-angle: 30deg;
+
+    //Defaults
+    --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
+    --#{$prefix}banner-bg-color: var(--#{$prefix}light-grey);
+    --#{$prefix}banner-title-color: var(--#{$prefix}headings-color);
+    --#{$prefix}banner-lead-color: var(--#{$prefix}body-color);
+
+
+    &.banner-default {
+        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
+        --#{$prefix}banner-bg-color: var(--#{$prefix}light-grey);
+    }
+
+    &.banner-alt {
+        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
+        --#{$prefix}banner-bg-color: var(--#{$prefix}alt-grey);
+    }
+
+    &.banner-dark {
+        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
+        --#{$prefix}banner-bg-color: var(--#{$prefix}primary);
+        --#{$prefix}banner-title-color: #FFF;
+        --#{$prefix}banner-lead-color: #FFF;
+        
+        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
+        --qld-link-color-rgb: 255, 255, 255;
+        --qld-breadcrumb-divider-color: #FFF;
+    
+    }
+
+    &.banner-dark-alt {
+        --#{$prefix}banner-bg-image: url('../img/sample-header-pic.jpg');
+        --#{$prefix}banner-bg-color: #0C3B71; //Todo, add this colour to variables.scss (?) Was defined in Figma. 
+        --#{$prefix}banner-title-color: var(--#{$prefix}white);
+        --#{$prefix}banner-lead-color: var(--#{$prefix}white);
+        --#{$prefix}banner-breadcrumb-color: var(--#{$prefix}white);
+    
+        //Dark banner require white breadcrumbs. We update the breadcrumb color variable here.
+        --qld-link-color-rgb: 255, 255, 255;
+        --qld-breadcrumb-divider-color: #FFF;
+    }
 }
+
 
 @include color-mode(dark) {
     .qld-banner {
         // Inherits from :root dark mode variables, but can be overridden here.
-        --#{$prefix}banner-bg: var(--#{$prefix}brand-primary-dark);
-        --#{$prefix}banner-title-color: var(--qld-headings-color);
-        --#{$prefix}banner-lead-color: var(--qld-body-color);
+        --#{$prefix}banner-title-color: var(--#{$prefix}headings-color);
+        --#{$prefix}banner-lead-color: var(--#{$prefix}body-color);
     }
 }
 
 
+
 // Component
 .qld-banner {
-    
-    background: var(--#{$prefix}banner-bg);
-    padding: 1rem 0 2rem 0;
 
-    @include media-breakpoint-up(md) { 
+    background-color: var(--#{$prefix}banner-bg-color);
+    padding: 1rem 0 2rem 0;
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
         padding: 2.5rem 0 3rem 0;
     }
 
-    .banner-title {
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0; 
+        width: 35%;
+        height: 100%;
+        background-image: var(--banner-image);
+        background-size: cover;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 29% 100%);
+    }
 
-        // H1: 
-        // Line height (3.25rem or 52px).
-        // Font-size (2.5rem or 40px). 
-        // Therefor LH = 52/40 = 1.3
-        line-height: 1.3;          
+    @include media-breakpoint-down(md) {
+        &:after {
+            content: none;
+        }
+    }
+
+    .banner-title {
+        // Line height (52px) / Font-size (40px) = 1.3
+        line-height: 1.3;  
         color: var(--#{$prefix}banner-title-color);
         margin-bottom: 1.5rem;
     }
@@ -40,5 +99,8 @@
         max-width: 50rem;
         color: var(--#{$prefix}banner-lead-color);
     }
-}
 
+    .breadcrumb {
+        color: var(--#{$prefix}banner-breadcrumb-color);
+    }
+}

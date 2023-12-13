@@ -8,39 +8,47 @@ import mustache from "mustache";
 import QGDSTemplate from "./src/js/qgds-template.js";
 import QGDSComponent from "./src/js/qgds-component.js";
 
+const breadcrumbs =  QGDSComponent.make("breadcrumbs");
+const banner = QGDSComponent.make("banner", {
+	data: {
+		breadcrumbs: breadcrumbs,
+		title: "Register your vehicle or motorcycles",
+		content: "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
+		classes: "banner-default",
+		// image: {
+		// 	url: "",
+		// 	alt: "",
+		// 	classes: "",
+		// }
+	}
+});
+
 //Build a static content page with some components
 QGDSTemplate.make({
-	
-  layout: "contentpage",
+	layout: "contentpage",
 	content: "main",
 	outfile: "index.html",
 	theme: "",
-
-  PageHeading: "Register your vehicle or motorcycle",
-	
-  PageLead:
-		"Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
-	
-  breadcrumbs: QGDSComponent.make("breadcrumbs"),
-  
-  components: {
+	banner: banner,
+	components: {
 		inpagenav: QGDSComponent.make("inpagenav"),
 		accordion: QGDSComponent.make("accordion"),
-		
-    //4 different ways to load an alert
-    alerts: {
-      closure: QGDSComponent.make("alert"),
-      receipt: QGDSComponent.make("alert", {
-			  data: {
-				  classes: "alert-success",
-				  title: "Your transaction is complete",
-          content: "<p>You're reference number is ATMR-1234-456. <a href='#'>Download a receipt</a></p>"
-			  },
-		  }),
-      reminder: QGDSComponent.make("alert", {
-			  datafile: "./src/components/alert/service-unavailable.json"
-      }),
-    },
+
+		//4 different ways to load an alert
+		alerts: {
+			closure: QGDSComponent.make("alert"),
+			receipt: QGDSComponent.make("alert", {
+				data: {
+					classes: "alert-success",
+					title: "Your transaction is complete",
+					content:
+						"<p>You're reference number is ATMR-1234-456. <a href='#'>Download a receipt</a></p>",
+				},
+			}),
+			reminder: QGDSComponent.make("alert", {
+				datafile: "./src/components/alert/service-unavailable.json",
+			}),
+		},
 		button: QGDSComponent.make("button"),
 		card: QGDSComponent.make("card"),
 		table: QGDSComponent.make("table"),
@@ -49,7 +57,7 @@ QGDSTemplate.make({
 			data: {
 				title: "This is a callout title",
 				content: "This is a callout description",
-        classes: "mb-5"
+				classes: "mb-5",
 			},
 		}),
 		cardblock: QGDSComponent.make("cardblock", {

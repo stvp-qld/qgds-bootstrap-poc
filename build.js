@@ -1,6 +1,7 @@
 // esbuild.config.js
 
 import * as esbuild from 'esbuild';
+import * as path from 'path';
 import {sassPlugin} from 'esbuild-sass-plugin';
 
 import handlebarsPlugin from "esbuild-plugin-handlebars";
@@ -11,7 +12,7 @@ import { copy } from 'esbuild-plugin-copy';
 // Your esbuild configuration
 const buildConfig = {
 	outdir: './dist/',
-	external: ['fs', 'path'],
+	external: ['fs', 'path', "../img/*"],
 	entryPoints: [
 		{ out: './assets/js/bootstrap.min', in: './node_modules/bootstrap/dist/js/bootstrap.js' },
 		{ out: './assets/js/main', in: './src/main.js' },
@@ -21,7 +22,8 @@ const buildConfig = {
   	minify: false,
 	loader: {
 		'.html' : 'text',
-		'.js': 'jsx'
+		'.js': 'jsx',
+		'.jpg': 'file',
 	},
 	target: ['es6'],
   	plugins: [

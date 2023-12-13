@@ -1,5 +1,6 @@
 blockquote, 
 .blockquote {
+    
     --#{$prefix}blockquote-padding: 0.25rem 1.5rem;
     --#{$prefix}blockquote-bg-color: #{$body-bg};
     --#{$prefix}blockquote-border-color: #{$qld-syntax-values};
