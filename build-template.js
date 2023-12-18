@@ -15,26 +15,26 @@ const banner = QGDSComponent.make("banner", {
 		title: "Register your vehicle or motorcycles",
 		content: "Motor vehicles and motorcycles (including mopeds and tricycles) used on Queensland roads must be registered.",
 		classes: "banner-default",
-		// image: {
-		// 	url: "",
-		// 	alt: "",
-		// 	classes: "",
-		// }
 	}
 });
 
 //Build a static content page with some components
 QGDSTemplate.make({
-	layout: "contentpage",
-	content: "main",
-	outfile: "index.html",
-	theme: "",
-	banner: banner,
+	layout: "contentpage",	// HTML template - similar to design file
+	content: "main",		// Primary content - similar to paint layout
+	outfile: "index.html",	// ...compiles into /dist/index.html 
+	theme: "",				// adds a "data-bs-theme" attribute to the <html> tag 
+	banner: banner,			// Banner component is compiled above using QDSComponent.make("banner", {...}) 
+	
+	//Components that will be used on either the layout or content
 	components: {
 		inpagenav: QGDSComponent.make("inpagenav"),
 		accordion: QGDSComponent.make("accordion"),
 
-		//4 different ways to load an alert
+		// Different ways to load an alert:
+		// 1. No datafile, no data
+		// 2. Pass custom data object
+		// 3. Pass datafile
 		alerts: {
 			closure: QGDSComponent.make("alert"),
 			receipt: QGDSComponent.make("alert", {
@@ -49,6 +49,7 @@ QGDSTemplate.make({
 				datafile: "./src/components/alert/service-unavailable.json",
 			}),
 		},
+
 		button: QGDSComponent.make("button"),
 		card: QGDSComponent.make("card"),
 		table: QGDSComponent.make("table"),

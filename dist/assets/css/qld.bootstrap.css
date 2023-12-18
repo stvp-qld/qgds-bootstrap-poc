@@ -17738,6 +17738,16 @@ blockquote,
   --qld-blockquote-border-width: 0.25rem;
   --qld-blockquote-title-color: #03213F;
   --qld-blockquote-text-color: #414141;
+}
+[data-bs-theme=dark] blockquote,
+[data-bs-theme=dark] .blockquote {
+  --qld-blockquote-bg-color: #595959;
+  --qld-blockquote-border-color: #6BBE27;
+  --qld-blockquote-title-color: #fff;
+  --qld-blockquote-text-color: #fff;
+}
+blockquote,
+.blockquote {
   background-color: var(--qld-blockquote-bg-color);
   border-left: solid var(--qld-blockquote-border-width) var(--qld-blockquote-border-color);
   padding: var(--qld-blockquote-padding);
@@ -17748,14 +17758,14 @@ blockquote-title,
   margin-bottom: 0;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: var(--qld-callout-title-color);
+  color: var(--qld-blockquote-title-color);
 }
 blockquote-text,
 .blockquote-text {
   padding-top: 0.75rem;
   margin-bottom: 0;
   line-height: 1.5rem;
-  color: var(--qld-callout-text-color);
+  color: var(--qld-blockquote-text-color);
 }
 .breadcrumb {
   --qld-breadcrumb-divider: ">";

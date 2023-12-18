@@ -88,7 +88,7 @@ const QGDSComponent = {
         //Merge our 3 possible data sources
         templatedata = { ...customdataJSON, ...defaultfileJSON, ...datafileJSON }
         //console.log( `${JSON.stringify(templatedata, 'undefined', 2)}`);
-        console.log(`Building component ${name} from ${componentPath}`);
+        console.log(`Made component ${name} from ${componentPath}`);
 
         //Compile the component HTML with Mustache JS 
         return mustache.render(componentHTML, templatedata);
